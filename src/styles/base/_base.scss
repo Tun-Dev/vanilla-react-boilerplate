@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  //This is to match the font size to the design on figma, 1920px is the width of the design
+  // font-size: calc(100vw / 1440 * 16);
+  // font-size: 16px;
+  font-size: calc(100vw / 1440 * 16);
+}
+
+body {
+  background: $cod-gray;
+  color: $seashell;
+  font-family: $NPS;
+  // perspective: 1px;
+}
+
+a {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1440) {
+  html {
+    font-size: calc(100vw / 1440 * 16);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

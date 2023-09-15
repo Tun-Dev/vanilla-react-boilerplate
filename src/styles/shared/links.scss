@@ -1,0 +1,65 @@
+// @import "../utils/variables.scss";
+
+%link__wrapper {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+}
+
+%link__line {
+  // background: $mandys-pink;
+  bottom: 0;
+  content: "";
+  height: 3px; // this is meant to be 2px but 5px for this project
+  left: 0;
+  // margin-top: 5px;
+  // top: 2px;
+  position: absolute;
+  transition: transform 0.7s $ease-out-expo;
+  width: 100%;
+} // this creates the line at the bottom of the link
+
+%link__line--visible {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+%link__line--hidden {
+  transform: scaleX(0);
+  transform-origin: right center;
+}
+
+%link {
+  @extend %link__wrapper;
+
+  display: inline-block;
+
+  &::after {
+    @extend %link__line;
+    @extend %link__line--visible;
+  }
+
+  &:hover {
+    &::after {
+      @extend %link__line--hidden;
+    }
+  }
+}
+
+%link--hidden {
+  @extend %link__wrapper;
+
+  display: inline-block;
+
+  &::after {
+    @extend %link__line;
+    @extend %link__line--hidden;
+  }
+
+  &:hover {
+    &::after {
+      @extend %link__line--visible;
+    }
+  }
+}
