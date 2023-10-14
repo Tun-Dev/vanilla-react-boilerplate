@@ -37,3 +37,22 @@ p {
 ::-webkit-scrollbar {
   display: none;
 }
+
+.landing {
+  // border: 1px solid red;
+  height: 100vh;
+
+  @include flex_col(0);
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: toRem(36);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-style: italic;
+  }
+}
